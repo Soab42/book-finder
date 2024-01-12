@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Devdas",
+    "author": "Sarat Chandra Chattopadhyay",
+    "publication_year": 1917,
+    "rating": 4,
+    "favourite": true,
+    "price": 15.99,
+    "cover_image": "https://boichitro.in/wp-content/uploads/2023/05/1589270203Devdas.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Chander Pahar",
+    "author": "Shankar",
+    "publication_year": 1937,
+    "rating": 4,
+    "favourite": false,
+    "price": 12.5,
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/f/f0/Cover_page_of_%22Chander_Pahar%22%2C_a_novel_by_Bibhutibhusan_Banerjee.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pother Pachali",
+    "author": "Sarat Chandra Chattopadhyay",
+    "publication_year": 1926,
+    "rating": 3,
+    "favourite": true,
+    "price": 18.99,
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Pather_panchali_poster_in_color_1.jpg/220px-Pather_panchali_poster_in_color_1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Feluda Panch",
+    "author": "Satyajit Ray",
+    "publication_year": 1976,
+    "rating": 2,
+    "favourite": false,
+    "price": 20.0,
+    "cover_image": "https://fs.pbs.com.bd/DIR/Com/PBS/Product/ImageDetails/1903982.jpg"
+  },
+  {
+    "id": 5,
+    "name": "The Unparalleled",
+    "author": "Bibhutibhushan Bandopadhyay",
+    "publication_year": 1943,
+    "rating": 4,
+    "favourite": false,
+    "price": 16.75,
+    "cover_image": "https://www.haritbooks.com/wp-content/uploads/2020/06/alikbabu_dmlibery-183x283.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Hirak Rajar Deshe",
+    "author": "Sarat Chandra Chattopadhyay",
+    "publication_year": 1910,
+    "rating": 4,
+    "favourite": true,
+    "price": 22.5,
+    "cover_image": "https://www.filmapia.com/media/images/films/posters/Hirak_Rajar_Deshe-Main-d41d8cd98f00b204e9800998ecf8427e.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Subarnalata",
+    "author": "Ashapurna Devi",
+    "publication_year": 1962,
+    "rating": 4,
+    "favourite": false,
+    "price": 19.99,
+    "cover_image": "https://bdebooks.com/wp-content/uploads/2023/01/Subarnalata-By-Ashapurna-Devi.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Srikanta",
+    "author": "Sarat Chandra Chattopadhyay",
+    "publication_year": 1917,
+    "rating": 4,
+    "favourite": false,
+    "price": 15.5,
+    "cover_image": "https://static.aadi.com.bd/__sized__/products/Srikanta-thumbnail-500x500-70.jpg"
+  }
+]

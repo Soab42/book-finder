@@ -1,10 +1,19 @@
+import Container from "./components/Container";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+
 function App() {
   return (
-    <>
-      <div className="flex justify-center items-center text-[5rem] bg-slate-900 h-screen  text-sky-600">
-        Welcome! Start Your Coding From Here.
-      </div>
-    </>
+    <div className="relative font-[Manrope] before:fixed before:left-0 before:top-0 before:-z-10 before:h-[435px] before:w-full before:rounded-bl-3xl before:bg-[#EAE6D7] max-md:px-4 lg:text-lg before:lg:rounded-bl-[79px]">
+      {/* <!-- Navbar Starts --> */}
+      <Nav />
+      {/* <!-- Navbar Ends --> */}
+      {/* <!-- main --> */}
+      <Container />
+      {/* <!-- main ends --> */}
+      {/* <!-- Footer --> */}
+      <Footer />
+    </div>
   );
 }
 
