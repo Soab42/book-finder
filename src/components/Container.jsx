@@ -1,5 +1,4 @@
 import BookItem from "./BookItem";
-import Header from "./Header";
 import BooksData from "../assets/BooksData.json";
 import { useState } from "react";
 import Search from "./Search";
@@ -7,14 +6,24 @@ import Filter from "./Filter";
 export default function Container() {
   const [searchBook, setSearchBook] = useState("");
   const [sortBook, setSortBook] = useState("");
-  const handleSearch = (searchtext) => {
-    setSearchBook(searchtext);
-    console.log(searchBook);
+  // console.log("search", searchBook);
+  // console.log("sort", sortBook);
+  const BookDataDetails = [...BooksData];
+  const handleSort = (a, b) => {
+    if (sortBook === "name_asc") {
+      return a.name.localeCompare(b.name); // Use localeCompare for string comparison
+    } else if (sortBook === "name_desc") {
+      return b.name.localeCompare(a.name); // Reverse order for descending
+    } else if (sortBook === "year_asc") {
+      return a.year - b.year;
+    } else if (sortBook === "year_desc") {
+      return b.year - a.year;
+    }
   };
-  const handleSort = (sortTerm) => {
-    setSortBook(sortTerm);
-    console.log(sortBook);
-  };
+  const finalData = BookDataDetails.filter((book) =>
+    book.name.toLowerCase().includes(searchBook.toLowerCase())
+  ).sort(handleSort);
+
   return (
     <main className="my-10 lg:my-14">
       {/* <!-- header --> */}
@@ -27,18 +36,18 @@ export default function Container() {
               Trending Books of the Year
             </h2>
             {/* <!-- Search Box --> */}
-            <Search handleSearch={handleSearch} />
+            <Search handleSearch={setSearchBook} />
             {/* <!-- Search Box Ends --> */}
           </div>
           {/* <!-- sort - filter --> */}
-          <Filter handleSort={handleSort} />
+          <Filter handleSort={setSortBook} />
         </div>
       </header>
       {/* <!-- header ends --> */}
       {/* <!-- Book Grid --> */}
       <div className="container mx-auto grid grid-cols-1 gap-8 max-w-7xl md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {/* <!-- Book Item --> */}
-        {BooksData.map((book) => (
+        {finalData.map((book) => (
           <BookItem bookDetails={book} key={book.id} />
         ))}
 
