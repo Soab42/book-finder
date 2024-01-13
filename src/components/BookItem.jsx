@@ -3,14 +3,7 @@ import BookButtons from "./BookButtons";
 import Ratings from "./Ratings";
 
 export default function BookItem({ bookDetails = {} }) {
-  const {
-    name,
-    author,
-    rating,
-    price = 60,
-    cover_image,
-    favourite,
-  } = bookDetails;
+  const { name, author, rating, price, cover_image, favourite } = bookDetails;
 
   return (
     <div className="space-y-3">

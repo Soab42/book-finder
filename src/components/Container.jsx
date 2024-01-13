@@ -5,12 +5,10 @@ import Search from "./Search";
 import Filter from "./Filter";
 import { handleSort } from "../lib/handleSort";
 import InfoSvg from "../assets/info.svg";
-import { info } from "autoprefixer";
+
 export default function Container() {
   const [searchBook, setSearchBook] = useState("");
   const [sortBook, setSortBook] = useState("");
-  // console.log("search", searchBook);
-  // console.log("sort", sortBook);
   const BookDataDetails = [...BooksData];
 
   const finalData = BookDataDetails.filter((book) =>
