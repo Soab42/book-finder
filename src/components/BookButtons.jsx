@@ -1,11 +1,7 @@
 import loveFill from "../assets/love-fill.svg";
 import loveEmpty from "../assets/love-empty.svg";
 import { useState } from "react";
-export default function BookButtons({ favourite = false }) {
-  const [isFavourite, setIsFavorite] = useState(favourite);
-  const handleFavourite = () => {
-    setIsFavorite(!isFavourite);
-  };
+export default function BookButtons({ isFavourite = false, handleFavourite }) {
   return (
     <div className="flex items-center gap-3 text-xs lg:text-sm">
       <button className="flex min-w-[132px] items-center justify-center gap-1 rounded-md bg-[#1C4336] py-1.5 text-white transition-all hover:opacity-80 lg:py-1.5">
@@ -28,7 +24,7 @@ export default function BookButtons({ favourite = false }) {
       {isFavourite ? (
         <button
           className="flex min-w-[132px] items-center justify-center gap-1 rounded-md bg-[#DC2954]/[14%] py-1.5 text-[#DC2954] transition-all hover:bg-[#DC2954]/[24%] lg:py-1.5"
-          onClick={handleFavourite}
+          onClick={() => handleFavourite(false)}
         >
           <img src={loveFill} />
           Favourite
@@ -36,7 +32,7 @@ export default function BookButtons({ favourite = false }) {
       ) : (
         <button
           className="flex min-w-[132px] items-center justify-center gap-1 rounded-md bg-[#1C4336]/[14%] py-1.5 text-[#1C4336] transition-all hover:bg-[#1C4336]/[24%] lg:py-1.5"
-          onClick={handleFavourite}
+          onClick={() => handleFavourite(true)}
         >
           <img src={loveEmpty} />
           Favourite

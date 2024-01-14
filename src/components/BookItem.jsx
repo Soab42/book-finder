@@ -1,10 +1,19 @@
-import Book from "../assets/book.png";
 import BookButtons from "./BookButtons";
 import Ratings from "./Ratings";
 
-export default function BookItem({ bookDetails = {} }) {
-  const { name, author, rating, price, cover_image, favourite } = bookDetails;
-
+export default function BookItem({ bookDetails = {}, handleFavorite }) {
+  const {
+    name,
+    author,
+    rating,
+    price,
+    cover_image,
+    favourite,
+    publication_year,
+  } = bookDetails;
+  const handleFavourite = (isFavourite) => {
+    handleFavorite({ ...bookDetails, favourite: isFavourite });
+  };
   return (
     <div className="space-y-3">
       {/* <!-- thumbnail --> */}
@@ -13,7 +22,9 @@ export default function BookItem({ bookDetails = {} }) {
       </div>
       {/* <!-- info --> */}
       <div className="space-y-3">
-        <h4 className="text-lg font-bold lg:text-xl">{name}</h4>
+        <h4 className="text-lg font-bold lg:text-xl">
+          {name}({publication_year})
+        </h4>
         <p className="text-xs lg:text-sm">
           By : <span>{author}</span>
         </p>
@@ -23,7 +34,10 @@ export default function BookItem({ bookDetails = {} }) {
           <Ratings rating={rating} />
           {/* <!-- stars ends --> */}
         </div>
-        <BookButtons favourite={favourite} />
+        <BookButtons
+          isFavourite={favourite}
+          handleFavourite={handleFavourite}
+        />
       </div>
     </div>
   );

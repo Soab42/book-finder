@@ -9,11 +9,21 @@ import InfoSvg from "../assets/info.svg";
 export default function Container() {
   const [searchBook, setSearchBook] = useState("");
   const [sortBook, setSortBook] = useState("");
-  const BookDataDetails = [...BooksData];
-
-  const finalData = BookDataDetails.filter((book) =>
-    book.name.toLowerCase().includes(searchBook.toLowerCase())
-  ).sort((a, b) => handleSort(a, b, sortBook));
+  const [bookDataDetails, setBookDetails] = useState(BooksData);
+  const handleFavorite = (updatedBook) => {
+    const updatedBookData = bookDataDetails.map((book) => {
+      if (book.id === updatedBook.id) {
+        return updatedBook;
+      }
+      return book;
+    });
+    setBookDetails(updatedBookData);
+  };
+  const finalData = bookDataDetails
+    .filter((book) =>
+      book?.name.toLowerCase().includes(searchBook?.toLowerCase())
+    )
+    .sort((a, b) => handleSort(a, b, sortBook));
   let content;
   if (finalData.length == 0) {
     content = (
@@ -29,7 +39,11 @@ export default function Container() {
     );
   } else {
     content = finalData.map((book) => (
-      <BookItem bookDetails={book} key={book.id} />
+      <BookItem
+        bookDetails={book}
+        key={book.id}
+        handleFavorite={handleFavorite}
+      />
     ));
   }
   return (
