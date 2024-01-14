@@ -11,7 +11,7 @@ export default function BookItem({ bookDetails = {}, handleFavorite }) {
     favourite,
     publication_year,
   } = bookDetails;
-  const handleFavourite = (isFavourite) => {
+  const onChangeFavourite = (isFavourite) => {
     handleFavorite({ ...bookDetails, favourite: isFavourite });
   };
   return (
@@ -36,7 +36,7 @@ export default function BookItem({ bookDetails = {}, handleFavorite }) {
         </div>
         <BookButtons
           isFavourite={favourite}
-          handleFavourite={handleFavourite}
+          onChangeFavourite={onChangeFavourite}
         />
       </div>
     </div>
