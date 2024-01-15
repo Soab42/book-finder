@@ -1,8 +1,4 @@
 export default function Filter({ handleSort }) {
-  const handleSelectChange = (event) => {
-    // Update the state with the selected value when the user makes a selection
-    handleSort(event.target.value);
-  };
   return (
     <div className="flex items-stretch space-x-3">
       {/* <!-- Sort --> */}
@@ -10,7 +6,7 @@ export default function Filter({ handleSort }) {
         className="cursor-pointer rounded-md border px-4 py-2 text-center text-gray-600"
         name="sortBy"
         id="sortBy"
-        onChange={handleSelectChange}
+        onChange={(event) => handleSort(event.target.value)}
       >
         <option value="">Sort</option>
         <option value="name_asc">Name (A-Z)</option>

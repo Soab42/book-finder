@@ -2,11 +2,17 @@ import { useState } from "react";
 
 export default function Search({ handleSearch }) {
   const [searchText, setSearchText] = useState("");
+
+  let timeId;
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch(searchText);
+    clearInterval(timeId);
+    timeId = setTimeout(() => {
+      handleSearch(searchText);
+    }, 300);
   };
   // console.log(searchText);
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex">
