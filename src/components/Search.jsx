@@ -6,7 +6,7 @@ export default function Search({ handleSearch }) {
   let timeId;
   const handleSubmit = (e) => {
     e.preventDefault();
-    clearInterval(timeId);
+    clearTimeout(timeId);
     timeId = setTimeout(() => {
       handleSearch(searchText);
     }, 300);
